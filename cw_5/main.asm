@@ -1,8 +1,5 @@
-/*
- * cw_4.asm
- *
- *  Created: 02.10.2024 17:26:03
- *   Author: gasec
- */ 
-
-
+ldi R20,100
+ldi R21,200
+add R20,R21
+ldi R21,0
+adc R21,R21

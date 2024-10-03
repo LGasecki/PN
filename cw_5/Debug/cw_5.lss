@@ -1,9 +1,9 @@
 
-AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_3\main.asm Wed Oct 02 21:59:32 2024
+AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_5\main.asm Wed Oct 02 22:20:52 2024
 
 [builtin](2): Including file 'C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\tn2313def.inc'
                  
-                 ldi R20, 100
+                 ldi R20,100
                  
                  ;***** Created: 2011-02-09 12:04 ******* Source: ATtiny2313.xml **********
                  ;*************************************************************************
@@ -665,11 +665,9 @@ AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_3\main.asm Wed Oct 02 21:59:32 
                  
                  ; ***** END OF FILE ******************************************************
 000000 e644      
-000001 ec58      ldi R21, 200
-000002 2e14      mov R1, R20
-000003 2e05      mov R0, R21
-000004 0c01      add R0, R1
-000005 0000      loop: nop
+000001 ec58      ldi R21,200
+000002 0f45      add R20,R21
+000003 e050      ldi R21,0
 
 
 RESOURCE USE INFORMATION
@@ -687,15 +685,15 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATtiny2313" register use summary:
-r0 :   2 r1 :   2 r2 :   0 r3 :   0 r4 :   0 r5 :   0 r6 :   0 r7 :   0 
+r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 r5 :   0 r6 :   0 r7 :   0 
 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 r13:   0 r14:   0 r15:   0 
-r16:   0 r17:   0 r18:   0 r19:   0 r20:   2 r21:   2 r22:   0 r23:   0 
+r16:   0 r17:   0 r18:   0 r19:   0 r20:   2 r21:   5 r22:   0 r23:   0 
 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 r29:   0 r30:   0 r31:   0 
 x  :   0 y  :   0 z  :   0 
-Registers used: 4 out of 35 (11.4%)
+Registers used: 2 out of 35 (5.7%)
 
 "ATtiny2313" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :   0 add   :   1 adiw  :   0 and   :   0 
+.lds  :   0 .sts  :   0 adc   :   1 add   :   1 adiw  :   0 and   :   0 
 andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
 brcc  :   0 brcs  :   0 break :   0 breq  :   0 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
@@ -704,21 +702,21 @@ brvs  :   0 bset  :   0 bst   :   0 cbi   :   0 cbr   :   0 clc   :   0
 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 clt   :   0 
 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 cpi   :   0 
 cpse  :   0 dec   :   0 eor   :   0 icall :   0 ijmp  :   0 in    :   0 
-inc   :   0 ld    :   0 ldd   :   0 ldi   :   2 lds   :   0 lpm   :   0 
-lsl   :   0 lsr   :   0 mov   :   2 movw  :   0 neg   :   0 nop   :   1 
+inc   :   0 ld    :   0 ldd   :   0 ldi   :   3 lds   :   0 lpm   :   0 
+lsl   :   0 lsr   :   0 mov   :   0 movw  :   0 neg   :   0 nop   :   0 
 or    :   0 ori   :   0 out   :   0 pop   :   0 push  :   0 rcall :   0 
-ret   :   0 reti  :   0 rjmp  :   1 rol   :   0 ror   :   0 sbc   :   0 
+ret   :   0 reti  :   0 rjmp  :   0 rol   :   0 ror   :   0 sbc   :   0 
 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   0 sbiw  :   0 sbr   :   0 
 sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 sei   :   0 sen   :   0 
 ser   :   0 ses   :   0 set   :   0 sev   :   0 sez   :   0 sleep :   0 
 spm   :   0 st    :   0 std   :   0 sts   :   0 sub   :   0 subi  :   0 
 swap  :   0 tst   :   0 wdr   :   0 
-Instructions used: 5 out of 105 (4.8%)
+Instructions used: 3 out of 105 (2.9%)
 
 "ATtiny2313" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x00000e     14      0     14    2048   0.7%
+[.cseg] 0x000000 0x00000a     10      0     10    2048   0.5%
 [.dseg] 0x000060 0x000060      0      0      0     128   0.0%
 [.eseg] 0x000000 0x000000      0      0      0     128   0.0%
 

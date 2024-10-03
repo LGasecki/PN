@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_3\main.asm Wed Oct 02 21:59:32 2024
+AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_8\main.asm Thu Oct 03 17:39:04 2024
 
 
 EQU  SIGNATURE_000 0000001e
@@ -448,4 +448,3 @@ EQU  USI_OVFaddr  00000010
 EQU  ERDYaddr     00000011
 EQU  WDTaddr      00000012
 EQU  INT_VECTORS_SIZE 00000013
-CSEG loop         00000005
