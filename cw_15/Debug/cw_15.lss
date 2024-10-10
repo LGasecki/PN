@@ -1,9 +1,9 @@
 
-AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_15\main.asm Sat Oct 05 15:12:57 2024
+AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_15\main.asm Wed Oct 09 23:08:06 2024
 
 [builtin](2): Including file 'C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\tn2313def.inc'
                  
-                 ldi R20, 250
+                 ldi R21, 250
                  
                  ;***** Created: 2011-02-09 12:04 ******* Source: ATtiny2313.xml **********
                  ;*************************************************************************
@@ -664,15 +664,15 @@ AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_15\main.asm Sat Oct 05 15:12:57
                  #endif  /* _TN2313DEF_INC_ */
                  
                  ; ***** END OF FILE ******************************************************
-000000 ef4a      
-                     Loop:
-000001 e05c          ldi R21, 12
-                         Loop1:
-000002 955a              dec R21
-000003 f7f1              brne Loop1          //10000 = R20*R21*10/3
-000004 0000          nop
-000005 954a          dec R20
-000006 f7d1          brne Loop
+000000 ef5a      
+                     Loop1:
+000001 e04c          ldi R20, 12
+                         Loop:
+000002 954a              dec R20
+000003 f7f1              brne Loop
+000004 955a          dec R21
+000005 0000          nop
+000006 f7d1          brne  Loop1
 
 
 RESOURCE USE INFORMATION

@@ -21,7 +21,7 @@
   <FILE>cw_15.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <Loop><FILE>C:\Users\gasec\Desktop\PN\cw_15\main.asm</FILE><LINE>2</LINE></Loop>
-  <Loop1><FILE>C:\Users\gasec\Desktop\PN\cw_15\main.asm</FILE><LINE>4</LINE></Loop1>
+  <Loop1><FILE>C:\Users\gasec\Desktop\PN\cw_15\main.asm</FILE><LINE>2</LINE></Loop1>
+  <Loop><FILE>C:\Users\gasec\Desktop\PN\cw_15\main.asm</FILE><LINE>4</LINE></Loop>
  </LABELS>
 </ASSEMBLER_INFO>
