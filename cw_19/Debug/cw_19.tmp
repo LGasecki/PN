@@ -21,7 +21,9 @@
   <FILE>cw_19.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <Loop><FILE>C:\Users\gasec\Desktop\PN\cw_19\main.asm</FILE><LINE>2</LINE></Loop>
-  <Loop2><FILE>C:\Users\gasec\Desktop\PN\cw_19\main.asm</FILE><LINE>6</LINE></Loop2>
+  <MainLoop><FILE>C:\Users\gasec\Desktop\PN\cw_19\main.asm</FILE><LINE>1</LINE></MainLoop>
+  <DelayInMs><FILE>C:\Users\gasec\Desktop\PN\cw_19\main.asm</FILE><LINE>7</LINE></DelayInMs>
+  <DelayOneMs><FILE>C:\Users\gasec\Desktop\PN\cw_19\main.asm</FILE><LINE>12</LINE></DelayOneMs>
+  <InsideDelayOneMs><FILE>C:\Users\gasec\Desktop\PN\cw_19\main.asm</FILE><LINE>15</LINE></InsideDelayOneMs>
  </LABELS>
 </ASSEMBLER_INFO>

@@ -22,9 +22,8 @@
  </OUTPUT_FILES>
  <LABELS>
   <MainLoop><FILE>C:\Users\gasec\Desktop\PN\cw_24\main.asm</FILE><LINE>1</LINE></MainLoop>
-  <DelayInMs><FILE>C:\Users\gasec\Desktop\PN\cw_24\main.asm</FILE><LINE>7</LINE></DelayInMs>
-  <DelayOneMs><FILE>C:\Users\gasec\Desktop\PN\cw_24\main.asm</FILE><LINE>19</LINE></DelayOneMs>
-  <InsideDelay><FILE>C:\Users\gasec\Desktop\PN\cw_24\main.asm</FILE><LINE>11</LINE></InsideDelay>
-  <InsideDelayOneMs><FILE>C:\Users\gasec\Desktop\PN\cw_24\main.asm</FILE><LINE>23</LINE></InsideDelayOneMs>
+  <DelayInMs><FILE>C:\Users\gasec\Desktop\PN\cw_24\main.asm</FILE><LINE>5</LINE></DelayInMs>
+  <DelayOneMs><FILE>C:\Users\gasec\Desktop\PN\cw_24\main.asm</FILE><LINE>10</LINE></DelayOneMs>
+  <InsideDelayOneMs><FILE>C:\Users\gasec\Desktop\PN\cw_24\main.asm</FILE><LINE>13</LINE></InsideDelayOneMs>
  </LABELS>
 </ASSEMBLER_INFO>

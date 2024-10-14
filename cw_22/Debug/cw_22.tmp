@@ -22,7 +22,7 @@
  </OUTPUT_FILES>
  <LABELS>
   <MainLoop><FILE>C:\Users\gasec\Desktop\PN\cw_22\main.asm</FILE><LINE>1</LINE></MainLoop>
-  <DelayInMs><FILE>C:\Users\gasec\Desktop\PN\cw_22\main.asm</FILE><LINE>5</LINE></DelayInMs>
-  <InsideDelay><FILE>C:\Users\gasec\Desktop\PN\cw_22\main.asm</FILE><LINE>9</LINE></InsideDelay>
+  <DelayInMs><FILE>C:\Users\gasec\Desktop\PN\cw_22\main.asm</FILE><LINE>6</LINE></DelayInMs>
+  <InsideDelay><FILE>C:\Users\gasec\Desktop\PN\cw_22\main.asm</FILE><LINE>11</LINE></InsideDelay>
  </LABELS>
 </ASSEMBLER_INFO>

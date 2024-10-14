@@ -1,26 +1,18 @@
-MainLoop:  
-ldi R23, 2
+MainLoop: 
 rcall DelayInMs 
-rcall DelayOneMs
 rjmp  MainLoop 
 
 DelayInMs: 
-    ldi r25, $07
-    ldi r24, $CD
-    nop
-    InsideDelay:
-        sbiw r24, 1
-        brcc InsideDelay
-        dec R23
-        brne DelayInMs
-        nop
-        ret
+    ldi R24, 3
+    rcall DelayOneMs
+    ret
 
 DelayOneMs:
     ldi r25, $07
-    ldi r24, $CD
-    nop
+    ldi r24, $CC
     InsideDelayOneMs:
         sbiw r24, 1
         brcc InsideDelayOneMs
+        dec R24
+        brne DelayOneMs
         ret
