@@ -1,21 +1,19 @@
-MainLoop: 
-rcall DelayInMs 
-rjmp  MainLoop 
+.macro LOAD_CONST
+ldi @0, low(@2)
+ldi @1, high(@2)
+.endmacro
 
-DelayInMs: 
-    ldi R24, 1
-    rcall DelayOneMs
-    ret
-DelayOneMs:
-    sts 0x61, r25
-    sts 0x60, r24
-    ldi r25, $07
-    ldi r24, $C9
-    InsideDelayOneMs:
-        sbiw r24, 1
-        brcc InsideDelayOneMs
-        lds r24, 0x60
-        lds r25, 0x61
-        dec R24
-        brne DelayOneMs
-        ret
+Reset:
+    ldi r16, 0x1E
+    out DDRB, r16
+    
+MainLoop:
+    ldi r16, 0x1E
+    out PORTB, r16
+
+    ldi r16, 0x00
+    out PORTB, r16
+
+    rjmp MainLoop
+
+        

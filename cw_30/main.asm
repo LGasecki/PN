@@ -1,21 +1,49 @@
-MainLoop: 
-rcall DelayInMs 
-rjmp  MainLoop 
+.macro LOAD_CONST
+ldi @0, low(@2)
+ldi @1, high(@2)
+.endmacro
+
+Reset:
+    ldi r16, 0xFF       ;Declare pins as output
+    out DDRD, r16
+    
+    ldi r16, 0x3F       ;Light 0
+    out PORTD, r16
+
+    ldi r16, 0x1E       ;Declare pin 1 portB, as output   
+    out DDRB, r16         
+
+    
+MainLoop:
+    ldi r17, $2     
+    out PORTB, r17   
+    rcall DelayInMs
+    ldi r17, $4     
+    out PORTB, r17   
+    rcall DelayInMs
+    ldi r17, $8     
+    out PORTB, r17   
+    rcall DelayInMs
+    ldi r17, $10     
+    out PORTB, r17   
+    rcall DelayInMs
+
+    rjmp MainLoop
+
 
 DelayInMs: 
-    ldi R24, 1
+    LOAD_CONST R30, R31, $FA
     rcall DelayOneMs
     ret
 DelayOneMs:
-    sts 0x61, r25
-    sts 0x60, r24
-    ldi r25, $07
-    ldi r24, $C9
+    push r30
+    push r31
+    LOAD_CONST R30, R31, $07CB
     InsideDelayOneMs:
-        sbiw r24, 1
+        sbiw r30, 1
         brcc InsideDelayOneMs
-        lds r24, 0x60
-        lds r25, 0x61
-        dec R24
+        pop r31
+        pop r30
+        dec R30
         brne DelayOneMs
         ret
