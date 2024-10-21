@@ -21,7 +21,7 @@
   <FILE>cw_18.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <Loop><FILE>C:\Users\gasec\Desktop\PN\cw_18\main.asm</FILE><LINE>2</LINE></Loop>
-  <Loop2><FILE>C:\Users\gasec\Desktop\PN\cw_18\main.asm</FILE><LINE>6</LINE></Loop2>
+  <Delay_1ms><FILE>C:\Users\gasec\Desktop\PN\cw_18\main.asm</FILE><LINE>2</LINE></Delay_1ms>
+  <IncrementLoop><FILE>C:\Users\gasec\Desktop\PN\cw_18\main.asm</FILE><LINE>6</LINE></IncrementLoop>
  </LABELS>
 </ASSEMBLER_INFO>

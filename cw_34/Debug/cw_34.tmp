@@ -21,11 +21,11 @@
   <FILE>cw_34.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <Reset><FILE>C:\Users\gasec\Desktop\PN\cw_34\main.asm</FILE><LINE>14</LINE></Reset>
-  <MainLoop><FILE>C:\Users\gasec\Desktop\PN\cw_34\main.asm</FILE><LINE>21</LINE></MainLoop>
-  <DelayInMs><FILE>C:\Users\gasec\Desktop\PN\cw_34\main.asm</FILE><LINE>49</LINE></DelayInMs>
-  <InsideDelayInMs><FILE>C:\Users\gasec\Desktop\PN\cw_34\main.asm</FILE><LINE>51</LINE></InsideDelayInMs>
-  <DelayOneMs><FILE>C:\Users\gasec\Desktop\PN\cw_34\main.asm</FILE><LINE>56</LINE></DelayOneMs>
-  <InsideDelayOneMs><FILE>C:\Users\gasec\Desktop\PN\cw_34\main.asm</FILE><LINE>60</LINE></InsideDelayOneMs>
+  <Reset><FILE>C:\Users\gasec\Desktop\PN\cw_34\main.asm</FILE><LINE>17</LINE></Reset>
+  <MainLoop><FILE>C:\Users\gasec\Desktop\PN\cw_34\main.asm</FILE><LINE>24</LINE></MainLoop>
+  <DelayInMs><FILE>C:\Users\gasec\Desktop\PN\cw_34\main.asm</FILE><LINE>48</LINE></DelayInMs>
+  <InsideDelayInMs><FILE>C:\Users\gasec\Desktop\PN\cw_34\main.asm</FILE><LINE>52</LINE></InsideDelayInMs>
+  <DelayOneMs><FILE>C:\Users\gasec\Desktop\PN\cw_34\main.asm</FILE><LINE>59</LINE></DelayOneMs>
+  <InsideDelayOneMs><FILE>C:\Users\gasec\Desktop\PN\cw_34\main.asm</FILE><LINE>63</LINE></InsideDelayOneMs>
  </LABELS>
 </ASSEMBLER_INFO>

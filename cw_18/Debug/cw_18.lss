@@ -1,9 +1,9 @@
 
-AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_18\main.asm Tue Oct 15 10:31:51 2024
+AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_18\main.asm Tue Oct 15 19:26:56 2024
 
 [builtin](2): Including file 'C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\tn2313def.inc'
                  
-                 ldi R23, 1
+                  ldi R22, 1 
                  
                  ;***** Created: 2011-02-09 12:04 ******* Source: ATtiny2313.xml **********
                  ;*************************************************************************
@@ -664,17 +664,31 @@ AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_18\main.asm Tue Oct 15 10:31:51
                  #endif  /* _TN2313DEF_INC_ */
                  
                  ; ***** END OF FILE ******************************************************
-000000 e071      
+000000 e061      
+                 Delay_1ms:
+000001 ef84          ldi R24, $F4
+000002 ef9a          ldi R25, $FA    
+                 
+                 IncrementLoop:
+000003 9601          adiw R24:R25, 1
+000004 f7f0          brcc IncrementLoop
+000005 956a          dec R22
+000006 f7d1          brne Delay_1ms
+000007 0000          nop
+000008 0000          nop
+000009 cff7          rjmp Delay_1ms
+                 
+                  /*   ldi R23, 1
                      Loop:
-000001 e381          ldi r24, low($F831)  ; M³odszy bajt licznika ustawiony na wartoœæ 8000
-000002 ef98          ldi r25, high($F831) ; Starszy bajt licznika ustawiony na wartoœæ 8000
-000003 0000          nop
+                     ldi r24, low($F831)  ; M³odszy bajt licznika ustawiony na wartoœæ 8000
+                     ldi r25, high($F831) ; Starszy bajt licznika ustawiony na wartoœæ 8000
+                     nop
                          Loop2:
-000004 9601              adiw r24, 1
-000005 f7f0              brcc Loop2
-000006 957a              dec R23
-000007 f7c9              brne Loop
-000008 0000              nop
+                         adiw r24, 1
+                         brcc Loop2
+                         dec R23
+                         brne Loop
+                         nop
 
 
 RESOURCE USE INFORMATION
@@ -694,8 +708,8 @@ counted separately from r26..r31 here.
 "ATtiny2313" register use summary:
 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 r5 :   0 r6 :   0 r7 :   0 
 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 r13:   0 r14:   0 r15:   0 
-r16:   0 r17:   0 r18:   0 r19:   0 r20:   0 r21:   0 r22:   0 r23:   2 
-r24:   2 r25:   1 r26:   0 r27:   0 r28:   0 r29:   0 r30:   0 r31:   0 
+r16:   0 r17:   0 r18:   0 r19:   0 r20:   0 r21:   0 r22:   2 r23:   0 
+r24:   2 r25:   2 r26:   0 r27:   0 r28:   0 r29:   0 r30:   0 r31:   0 
 x  :   0 y  :   0 z  :   0 
 Registers used: 3 out of 35 (8.6%)
 
