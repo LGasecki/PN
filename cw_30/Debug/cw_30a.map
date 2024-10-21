@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_26\main.asm Mon Oct 21 18:24:39 2024
+AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_30\main.asm Mon Oct 21 18:24:38 2024
 
 
 EQU  SIGNATURE_000 0000001e
@@ -448,7 +448,8 @@ EQU  USI_OVFaddr  00000010
 EQU  ERDYaddr     00000011
 EQU  WDTaddr      00000012
 EQU  INT_VECTORS_SIZE 00000013
-CSEG MainLoop     00000000
-CSEG DelayInMs    00000002
-CSEG DelayOneMs   00000005
-CSEG InsideDelayOneMs 0000000b
+CSEG Reset        00000000
+CSEG MainLoop     00000006
+CSEG DelayInMs    00000013
+CSEG DelayOneMs   00000017
+CSEG InsideDelayOneMs 0000001b

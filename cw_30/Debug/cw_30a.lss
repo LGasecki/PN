@@ -1,9 +1,9 @@
 
-AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_27a\main.asm Mon Oct 21 18:24:39 2024
+AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_30\main.asm Mon Oct 21 18:24:38 2024
 
 [builtin](2): Including file 'C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\tn2313def.inc'
                  
-                 MainLoop: 
+                 .macro LOAD_CONST
                  
                  ;***** Created: 2011-02-09 12:04 ******* Source: ATtiny2313.xml **********
                  ;*************************************************************************
@@ -665,25 +665,55 @@ AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_27a\main.asm Mon Oct 21 18:24:3
                  
                  ; ***** END OF FILE ******************************************************
                  
-000000 d001      rcall DelayInMs 
-000001 cffe      rjmp  MainLoop 
+                 ldi @0, low(@2)
+                 ldi @1, high(@2)
+                 .endmacro
+                 
+                 Reset:
+000000 ef0f          ldi r16, 0xFF       ;Declare pins as output
+000001 bb01          out DDRD, r16
+                     
+000002 e30f          ldi r16, 0x3F       ;Light 0
+000003 bb02          out PORTD, r16
+                 
+000004 e10e          ldi r16, 0x1E       ;Declare pin 1 portB, as output   
+000005 bb07          out DDRB, r16         
+                 
+                     
+                 MainLoop:
+000006 e012          ldi r17, $2     
+000007 bb18          out PORTB, r17   
+000008 d00a          rcall DelayInMs
+000009 e014          ldi r17, $4     
+00000a bb18          out PORTB, r17   
+00000b d007          rcall DelayInMs
+00000c e018          ldi r17, $8     
+00000d bb18          out PORTB, r17   
+00000e d004          rcall DelayInMs
+00000f e110          ldi r17, $10     
+000010 bb18          out PORTB, r17   
+000011 d001          rcall DelayInMs
+                 
+000012 cff3          rjmp MainLoop
+                 
                  
                  DelayInMs: 
-000002 e08a          ldi R24, 10
-000003 d001          rcall DelayOneMs
-000004 9508          ret
+000013 efea
+000014 e0f0          LOAD_CONST R30, R31, $FA
+000015 d001          rcall DelayOneMs
+000016 9508          ret
                  DelayOneMs:
-000005 938f          push r24
-000006 939f          push r25
-000007 e097          ldi r25, $07
-000008 ec8c          ldi r24, $CC
+000017 93ef          push r30
+000018 93ff          push r31
+000019 eceb
+00001a e0f7          LOAD_CONST R30, R31, $07CB
                      InsideDelayOneMs:
-000009 9701              sbiw r24, 1
-00000a f7f0              brcc InsideDelayOneMs
-00000b 919f              pop r25
-00000c 918f              pop r24
-00000d 958a              dec R24
-00000e f7b1              brne DelayOneMs
+00001b 9731              sbiw r30, 1
+00001c f7f0              brcc InsideDelayOneMs
+00001d 91ff              pop r31
+00001e 91ef              pop r30
+00001f 95ea              dec R30
+000020 f7b1              brne DelayOneMs
 
 
 RESOURCE USE INFORMATION
@@ -703,10 +733,10 @@ counted separately from r26..r31 here.
 "ATtiny2313" register use summary:
 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 r5 :   0 r6 :   0 r7 :   0 
 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 r13:   0 r14:   0 r15:   0 
-r16:   0 r17:   0 r18:   0 r19:   0 r20:   0 r21:   0 r22:   0 r23:   0 
-r24:   6 r25:   3 r26:   0 r27:   0 r28:   0 r29:   0 r30:   0 r31:   0 
+r16:   6 r17:   8 r18:   0 r19:   0 r20:   0 r21:   0 r22:   0 r23:   0 
+r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 r29:   0 r30:   6 r31:   4 
 x  :   0 y  :   0 z  :   0 
-Registers used: 2 out of 35 (5.7%)
+Registers used: 4 out of 35 (11.4%)
 
 "ATtiny2313" instruction use summary:
 .lds  :   0 .sts  :   0 adc   :   0 add   :   0 adiw  :   0 and   :   0 
@@ -718,21 +748,21 @@ brvs  :   0 bset  :   0 bst   :   0 cbi   :   0 cbr   :   0 clc   :   0
 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 clt   :   0 
 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 cpi   :   0 
 cpse  :   0 dec   :   1 eor   :   0 icall :   0 ijmp  :   0 in    :   0 
-inc   :   0 ld    :   0 ldd   :   0 ldi   :   3 lds   :   0 lpm   :   0 
+inc   :   0 ld    :   0 ldd   :   0 ldi   :  11 lds   :   0 lpm   :   0 
 lsl   :   0 lsr   :   0 mov   :   0 movw  :   0 neg   :   0 nop   :   0 
-or    :   0 ori   :   0 out   :   0 pop   :   2 push  :   2 rcall :   2 
+or    :   0 ori   :   0 out   :   7 pop   :   2 push  :   2 rcall :   5 
 ret   :   2 reti  :   0 rjmp  :   1 rol   :   0 ror   :   0 sbc   :   0 
 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   0 sbiw  :   1 sbr   :   0 
 sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 sei   :   0 sen   :   0 
 ser   :   0 ses   :   0 set   :   0 sev   :   0 sez   :   0 sleep :   0 
 spm   :   0 st    :   0 std   :   0 sts   :   0 sub   :   0 subi  :   0 
 swap  :   0 tst   :   0 wdr   :   0 
-Instructions used: 10 out of 105 (9.5%)
+Instructions used: 11 out of 105 (10.5%)
 
 "ATtiny2313" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000020     32      0     32    2048   1.6%
+[.cseg] 0x000000 0x000044     68      0     68    2048   3.3%
 [.dseg] 0x000060 0x000060      0      0      0     128   0.0%
 [.eseg] 0x000000 0x000000      0      0      0     128   0.0%
 

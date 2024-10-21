@@ -3,6 +3,19 @@ ldi @0, low(@2)
 ldi @1, high(@2)
 .endmacro
 
+.macro SET_DIGIT
+    push R16
+    ldi r16, @0
+    rcall DigitToPin
+    out Digits_P, r16   ;Init Seg_0
+    mov R16, Dig_@0  
+    rcall DigitTo7segCode  
+    out Segments_P, R16 ;Light Dig_0
+    rcall DelayInMs
+
+    pop R16
+.endmacro
+
 .equ Digits_P = PORTB
 .equ Segments_P = PORTD
 
@@ -13,53 +26,50 @@ ldi @1, high(@2)
 
 ldi R18, $0
 mov Dig_0, R18
-ldi R18, $3
+ldi R18, $0
 mov Dig_1, R18
-ldi R18, $5
+ldi R18, $0
 mov Dig_2, R18
-ldi R18, $2
+ldi R18, $0
 mov Dig_3, R18
-Reset:
-    ldi r16, 0xFF       ;Declare pins as output
-    out DDRD, r16
 
-    ldi r16, 0x1E       ;Declare pin 1-4 portB, as output   
-    out DDRB, r16         
+ldi r16, 0xFF       ;Declare pins as output
+out DDRD, r16
+ldi r16, 0x1E       ;Declare pin 1-4 portB, as output   
+out DDRB, r16         
 
 MainLoop: 
-    ldi r17, $2
-    out Digits_P, r17   ;Init Seg_0
-    mov R16, Dig_0  
-    rcall DigitTo7segCode  
-    out Segments_P, R16 ;Light Dig_0
-    rcall DelayInMs
-  
-    ldi r17, $4   
-    out Digits_P, r17   ;Init Seg_1
-    mov R16, Dig_1
-    rcall DigitTo7segCode  
-    out Segments_P, R16 ;Light_Dig_1
-    rcall DelayInMs
-    
-    ldi r17, $8  
-    out Digits_P, r17   ;Init Seg_2
-    mov R16, Dig_2 
-    rcall DigitTo7segCode      
-    out Segments_P, R16 ;Light_Dig_2
-    rcall DelayInMs
-     
-    ldi r17, $10  
-    out Digits_P, r17   ;Init_Seg_3
-    mov R16, Dig_3
-    rcall DigitTo7segCode      
-    out Segments_P, R16 ;Light_Dig_3
-    rcall DelayInMs
+SET_DIGIT 0 
+inc Dig_0
+ldi R19, $A
+cp R19, Dig_0
+brne MainLoop
+clr Dig_0
+SET_DIGIT 1 
+inc Dig_1
+ldi R19, $A
+cp R19, Dig_1
+brne MainLoop
+clr Dig_1
+SET_DIGIT 2 
+inc Dig_2
+ldi R19, $A
+cp R19, Dig_2
+brne MainLoop
+clr Dig_2
+SET_DIGIT 3 
+inc Dig_3
+ldi R19, $A
+cp R19, Dig_3
+brne MainLoop
+clr Dig_3
 
-    rjmp MainLoop
+rjmp MainLoop 
+
 DelayInMs:
     push R30
     push R31 
-    LOAD_CONST R30, R31, $5 ;5ms  200Hz Segment (50Hz ca³y)
+    LOAD_CONST R30, R31, $F ;5ms  200Hz Segment (50Hz ca³y)
     InsideDelayInMs:
     rcall DelayOneMs
     sbiw r30, 1
@@ -83,11 +93,21 @@ push R30
 push R31
 ldi R30, low(Table<<1)   
 ldi R31, high(Table<<1) 
-
 add R30, R16
 lpm R16, Z    
-
 pop R31
 pop R30
 ret
-Table: .db 0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x4F 
+Table: .db 0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F 
+
+DigitToPin:
+push R30
+push R31
+ldi R30, low(Table1<<1)   
+ldi R31, high(Table1<<1) 
+add R30, R16
+lpm R16, Z    
+pop R31
+pop R30
+ret
+Table1: .db $2,$4,$8,$10
