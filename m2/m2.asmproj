@@ -6,13 +6,13 @@
     <ToolchainName>com.Atmel.AVRAssembler</ToolchainName>
     <ProjectGuid>{bb6d6405-ba65-4829-b749-c55f119b2e4c}</ProjectGuid>
     <avrdeviceseries>none</avrdeviceseries>
-    <avrdevice>ATtiny2313</avrdevice>
+    <avrdevice>ATtiny2313A</avrdevice>
     <OutputFileName>$(MSBuildProjectName)</OutputFileName>
     <OutputFileExtension>.obj</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
     <Language>ASSEMBLY</Language>
     <AssemblyName>cw_4</AssemblyName>
-    <Name>cw_4</Name>
+    <Name>m2</Name>
     <RootNamespace>cw_4</RootNamespace>
     <EntryFile>$(MSBuildProjectDirectory)\main.asm</EntryFile>
     <ToolchainFlavour>Native</ToolchainFlavour>

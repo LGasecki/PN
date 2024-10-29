@@ -1,7 +1,15 @@
 
-AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_41\main.asm Mon Oct 21 19:30:26 2024
+AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_41\main.asm Wed Oct 23 14:12:24 2024
 
 [builtin](2): Including file 'C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\tn2313def.inc'
+C:\Users\gasec\Desktop\PN\cw_41\main.asm(7): warning: .def: 'XL' redefinition (r26->r16)
+C:\Users\gasec\Desktop\PN\cw_41\main.asm(8): warning: .def: 'XH' redefinition (r27->r17)
+C:\Users\gasec\Desktop\PN\cw_41\main.asm(9): warning: .def: 'YL' redefinition (r28->r18)
+C:\Users\gasec\Desktop\PN\cw_41\main.asm(10): warning: .def: 'YH' redefinition (r29->r19)
+C:\Users\gasec\Desktop\PN\cw_41\main.asm(12): warning: Register r16 already defined by the .DEF directive
+C:\Users\gasec\Desktop\PN\cw_41\main.asm(13): warning: Register r17 already defined by the .DEF directive
+C:\Users\gasec\Desktop\PN\cw_41\main.asm(14): warning: Register r18 already defined by the .DEF directive
+C:\Users\gasec\Desktop\PN\cw_41\main.asm(15): warning: Register r19 already defined by the .DEF directive
                  
                  .macro LOAD_CONST
                  
@@ -669,6 +677,20 @@ AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_41\main.asm Mon Oct 21 19:30:26
                  ldi @1, high(@2)
                  .endmacro
                  
+                 ; inputs 
+                 .def XL=R16 ; divident   
+                 .def XH=R17  
+                 .def YL=R18 ; divisor 
+                 .def YH=R19  
+                 ; outputs 
+                 .def RL=R16 ; remainder  
+                 .def RH=R17  
+                 .def QL=R18 ; quotient 
+                 .def QH=R19  
+                 ; internal 
+                 .def QCtrL=R24 
+                 .def QCtrH=R25
+                 
                  .macro SET_DIGIT
                      push R16
                      ldi r16, @0
@@ -705,116 +727,142 @@ AVRASM ver. 2.1.57  C:\Users\gasec\Desktop\PN\cw_41\main.asm Mon Oct 21 19:30:26
 00000b bb07      out DDRB, r16         
                  
                  MainLoop: 
-00000c 930f
-00000d e000
-00000e d057
-00000f bb08
-000010 2d02
-000011 d046
-000012 bb02
-000013 d031
-000014 910f      SET_DIGIT 0 
-000015 9423      inc Dig_0
-000016 e03a      ldi R19, $A
-000017 1532      cp R19, Dig_0
-000018 f799      brne MainLoop
-000019 2422      clr Dig_0
-00001a 930f
-00001b e001
-00001c d049
-00001d bb08
-00001e 2d03
-00001f d038
-000020 bb02
-000021 d023
-000022 910f      SET_DIGIT 1 
-000023 9433      inc Dig_1
-000024 e03a      ldi R19, $A
-000025 1533      cp R19, Dig_1
-000026 f729      brne MainLoop
-000027 2433      clr Dig_1
-000028 930f
-000029 e002
-00002a d03b
-00002b bb08
-00002c 2d04
-00002d d02a
-00002e bb02
-00002f d015
-000030 910f      SET_DIGIT 2 
-000031 9443      inc Dig_2
-000032 e03a      ldi R19, $A
-000033 1534      cp R19, Dig_2
-000034 f6b9      brne MainLoop
-000035 2444      clr Dig_2
-000036 930f
-000037 e003
-000038 d02d
-000039 bb08
-00003a 2d05
-00003b d01c
-00003c bb02
-00003d d007
-00003e 910f      SET_DIGIT 3 
-00003f 9453      inc Dig_3
-000040 e03a      ldi R19, $A
-000041 1535      cp R19, Dig_3
-000042 f649      brne MainLoop
-000043 2455      clr Dig_3
+00000c eb03
+00000d e115      LOAD_CONST XL,XH, 5555
+00000e ef24
+00000f e031      LOAD_CONST YL, YH, 500
+000010 d065      rcall Divide
                  
-000044 cfc7      rjmp MainLoop 
+                 
+                 
+000011 930f
+000012 e000
+000013 d057
+000014 bb08
+000015 2d02
+000016 d046
+000017 bb02
+000018 d031
+000019 910f      SET_DIGIT 0 
+00001a 9423      inc Dig_0
+00001b e03a      ldi R19, $A
+00001c 1532      cp R19, Dig_0
+00001d f771      brne MainLoop
+00001e 2422      clr Dig_0
+00001f 930f
+000020 e001
+000021 d049
+000022 bb08
+000023 2d03
+000024 d038
+000025 bb02
+000026 d023
+000027 910f      SET_DIGIT 1 
+000028 9433      inc Dig_1
+000029 e03a      ldi R19, $A
+00002a 1533      cp R19, Dig_1
+00002b f701      brne MainLoop
+00002c 2433      clr Dig_1
+00002d 930f
+00002e e002
+00002f d03b
+000030 bb08
+000031 2d04
+000032 d02a
+000033 bb02
+000034 d015
+000035 910f      SET_DIGIT 2 
+000036 9443      inc Dig_2
+000037 e03a      ldi R19, $A
+000038 1534      cp R19, Dig_2
+000039 f691      brne MainLoop
+00003a 2444      clr Dig_2
+00003b 930f
+00003c e003
+00003d d02d
+00003e bb08
+00003f 2d05
+000040 d01c
+000041 bb02
+000042 d007
+000043 910f      SET_DIGIT 3 
+000044 9453      inc Dig_3
+000045 e03a      ldi R19, $A
+000046 1535      cp R19, Dig_3
+000047 f621      brne MainLoop
+000048 2455      clr Dig_3
+                 
+000049 cfc2      rjmp MainLoop 
                  
                  DelayInMs:
-000045 93ef          push R30
-000046 93ff          push R31 
-000047 e0ef
-000048 e0f0          LOAD_CONST R30, R31, $F ;5ms  200Hz Segment (50Hz ca³y)
+00004a 93ef          push R30
+00004b 93ff          push R31 
+00004c e0ef
+00004d e0f0          LOAD_CONST R30, R31, $F ;5ms  200Hz Segment (50Hz ca³y)
                      InsideDelayInMs:
-000049 d005          rcall DelayOneMs
-00004a 9731          sbiw r30, 1
-00004b f7e9          brne InsideDelayInMs
-00004c 91ff          pop R31
-00004d 91ef          pop R30
-00004e 9508          ret
+00004e d005          rcall DelayOneMs
+00004f 9731          sbiw r30, 1
+000050 f7e9          brne InsideDelayInMs
+000051 91ff          pop R31
+000052 91ef          pop R30
+000053 9508          ret
                  DelayOneMs:
-00004f 93ef          push r30
-000050 93ff          push r31
-000051 eceb
-000052 e0f7          LOAD_CONST R30, R31, $07CB ;1995us
+000054 93ef          push r30
+000055 93ff          push r31
+000056 eceb
+000057 e0f7          LOAD_CONST R30, R31, $07CB ;1995us
                      InsideDelayOneMs:
-000053 9731              sbiw r30, 1
-000054 f7f0              brcc InsideDelayOneMs
-000055 91ff              pop r31
-000056 91ef              pop r30
-000057 9508              ret
+000058 9731              sbiw r30, 1
+000059 f7f0              brcc InsideDelayOneMs
+00005a 91ff              pop r31
+00005b 91ef              pop r30
+00005c 9508              ret
                  
                  DigitTo7segCode:
-000058 93ef      push R30
-000059 93ff      push R31
-00005a ece2      ldi R30, low(Table<<1)   
-00005b e0f0      ldi R31, high(Table<<1) 
-00005c 0fe0      add R30, R16
-00005d 9104      lpm R16, Z    
-00005e 91ff      pop R31
-00005f 91ef      pop R30
-000060 9508      ret
-000061 063f
-000062 4f5b
-000063 6d66
-000064 077d
-000065 6f7f      Table: .db 0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F 
+00005d 93ef      push R30
+00005e 93ff      push R31
+00005f ecec      ldi R30, low(Table<<1)   
+000060 e0f0      ldi R31, high(Table<<1) 
+000061 0fe0      add R30, R16
+000062 9104      lpm R16, Z    
+000063 91ff      pop R31
+000064 91ef      pop R30
+000065 9508      ret
+000066 063f
+000067 4f5b
+000068 6d66
+000069 077d
+00006a 6f7f      Table: .db 0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F 
                  
                  DigitToPin:
-000066 93ef      push R30
-000067 93ff      push R31
-000068 edee      ldi R30, low(Table1<<1)   
-000069 e0f0      ldi R31, high(Table1<<1) 
-00006a 0fe0      add R30, R16
-00006b 9104      lpm R16, Z    
-00006c 91ff      pop R31
-00006d 91ef      pop R30
-00006e 9508      ret
-00006f 0402
+00006b 93ef      push R30
+00006c 93ff      push R31
+00006d eee8      ldi R30, low(Table1<<1)   
+00006e e0f0      ldi R31, high(Table1<<1) 
+00006f 0fe0      add R30, R16
+000070 9104      lpm R16, Z    
+000071 91ff      pop R31
+000072 91ef      pop R30
+000073 9508      ret
+000074 0402
+000075 1008      Table1: .db $2,$4,$8,$10
+                 
+                 Divide:
+000076 938f      push R24
+000077 939f      push R25
+000078 1702          cp  XL, YL     
+000079 0713          cpc XH, YH    
+00007a f020          brcs end_div  
+00007b 1b02          sub XL, YL    
+00007c 0b13          sbc XH, YH   
+00007d 9601          adiw QCtrL, 1  
+00007e cff7          rjmp Divide  
+                 end_div:
+00007f 0188          movw RL, XL
+000080 019c          movw QL, QCtrl
+000081 919f      pop R25
+000082 918f      pop R24
+000083 9508          ret
 
 
 RESOURCE USE INFORMATION
@@ -834,37 +882,37 @@ counted separately from r26..r31 here.
 "ATtiny2313" register use summary:
 r0 :   0 r1 :   0 r2 :   5 r3 :   5 r4 :   5 r5 :   5 r6 :   0 r7 :   0 
 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 r13:   0 r14:   0 r15:   0 
-r16:  32 r17:   0 r18:   8 r19:   8 r20:   0 r21:   0 r22:   0 r23:   0 
-r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 r29:   0 r30:  16 r31:  12 
+r16:  37 r17:   3 r18:  12 r19:  11 r20:   0 r21:   0 r22:   0 r23:   0 
+r24:   4 r25:   2 r26:   0 r27:   0 r28:   0 r29:   0 r30:  16 r31:  12 
 x  :   0 y  :   0 z  :   2 
-Registers used: 10 out of 35 (28.6%)
+Registers used: 13 out of 35 (37.1%)
 
 "ATtiny2313" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :   0 add   :   2 adiw  :   0 and   :   0 
+.lds  :   0 .sts  :   0 adc   :   0 add   :   2 adiw  :   1 and   :   0 
 andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
-brcc  :   1 brcs  :   0 break :   0 breq  :   0 brge  :   0 brhc  :   0 
+brcc  :   1 brcs  :   1 break :   0 breq  :   0 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
 brne  :   5 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
 brvs  :   0 bset  :   0 bst   :   0 cbi   :   0 cbr   :   0 clc   :   0 
 clh   :   0 cli   :   0 cln   :   0 clr   :   4 cls   :   0 clt   :   0 
-clv   :   0 clz   :   0 com   :   0 cp    :   4 cpc   :   0 cpi   :   0 
+clv   :   0 clz   :   0 com   :   0 cp    :   5 cpc   :   1 cpi   :   0 
 cpse  :   0 dec   :   0 eor   :   0 icall :   0 ijmp  :   0 in    :   0 
-inc   :   4 ld    :   0 ldd   :   0 ldi   :  22 lds   :   0 lpm   :   4 
-lsl   :   0 lsr   :   0 mov   :   8 movw  :   0 neg   :   0 nop   :   0 
-or    :   0 ori   :   0 out   :  10 pop   :  12 push  :  12 rcall :  13 
-ret   :   4 reti  :   0 rjmp  :   1 rol   :   0 ror   :   0 sbc   :   0 
+inc   :   4 ld    :   0 ldd   :   0 ldi   :  26 lds   :   0 lpm   :   4 
+lsl   :   0 lsr   :   0 mov   :   8 movw  :   2 neg   :   0 nop   :   0 
+or    :   0 ori   :   0 out   :  10 pop   :  14 push  :  14 rcall :  14 
+ret   :   5 reti  :   0 rjmp  :   2 rol   :   0 ror   :   0 sbc   :   1 
 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   0 sbiw  :   2 sbr   :   0 
 sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 sei   :   0 sen   :   0 
 ser   :   0 ses   :   0 set   :   0 sev   :   0 sez   :   0 sleep :   0 
-spm   :   0 st    :   0 std   :   0 sts   :   0 sub   :   0 subi  :   0 
+spm   :   0 st    :   0 std   :   0 sts   :   0 sub   :   1 subi  :   0 
 swap  :   0 tst   :   0 wdr   :   0 
-Instructions used: 16 out of 105 (15.2%)
+Instructions used: 22 out of 105 (21.0%)
 
 "ATtiny2313" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0000e2    212     14    226    2048  11.0%
+[.cseg] 0x000000 0x000108    250     14    264    2048  12.9%
 [.dseg] 0x000060 0x000060      0      0      0     128   0.0%
 [.eseg] 0x000000 0x000000      0      0      0     128   0.0%
 
-Assembly complete, 0 errors, 0 warnings
+Assembly complete, 0 errors, 8 warnings

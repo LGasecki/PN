@@ -3,6 +3,20 @@ ldi @0, low(@2)
 ldi @1, high(@2)
 .endmacro
 
+; inputs 
+.def XL=R16 ; divident   
+.def XH=R17  
+.def YL=R18 ; divisor 
+.def YH=R19  
+; outputs 
+.def RL=R16 ; remainder  
+.def RH=R17  
+.def QL=R18 ; quotient 
+.def QH=R19  
+; internal 
+.def QCtrL=R24 
+.def QCtrH=R25
+
 .macro SET_DIGIT
     push R16
     ldi r16, @0
@@ -39,6 +53,12 @@ ldi r16, 0x1E       ;Declare pin 1-4 portB, as output
 out DDRB, r16         
 
 MainLoop: 
+LOAD_CONST XL,XH, 5555
+LOAD_CONST YL, YH, 500
+rcall Divide
+
+
+
 SET_DIGIT 0 
 inc Dig_0
 ldi R19, $A
@@ -111,3 +131,20 @@ pop R31
 pop R30
 ret
 Table1: .db $2,$4,$8,$10
+
+Divide:
+push R24
+push R25
+    cp  XL, YL     
+    cpc XH, YH    
+    brcs end_div  
+    sub XL, YL    
+    sbc XH, YH   
+    adiw QCtrL, 1  
+    rjmp Divide  
+end_div:
+    movw RL, XL
+    movw QL, QCtrl
+pop R25
+pop R24
+    ret

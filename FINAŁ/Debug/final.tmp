@@ -1,0 +1,43 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.57</VERSION>
+ <DEVICE>"ATtiny2313A"</DEVICE>
+ <WORKING_DIR>C:\Users\gasec\Desktop\PN\FINA£\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\tn2313Adef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\gasec\Desktop\PN\FINA£\Debug/final.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>final.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>final.map</FILE>
+  <FILE>final.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <_main><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>93</LINE></_main>
+  <_Timer_ISR><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>67</LINE></_Timer_ISR>
+  <_ExtInt_ISR><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>46</LINE></_ExtInt_ISR>
+  <Increment><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>55</LINE></Increment>
+  <NoOverflow><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>60</LINE></NoOverflow>
+  <_NumberToDigits><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>159</LINE></_NumberToDigits>
+  <MainLoop><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>138</LINE></MainLoop>
+  <DigitToPin><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>242</LINE></DigitToPin>
+  <DigitTo7segCode><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>256</LINE></DigitTo7segCode>
+  <DelayInMs><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>272</LINE></DelayInMs>
+  <_Divide><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>219</LINE></_Divide>
+  <Compare><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>222</LINE></Compare>
+  <end_div><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>230</LINE></end_div>
+  <Table1><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>252</LINE></Table1>
+  <Table><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>254</LINE></Table>
+  <InsideDelayInMs><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>277</LINE></InsideDelayInMs>
+  <OneMsLoop><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>287</LINE></OneMsLoop>
+  <L1><FILE>C:\Users\gasec\Desktop\PN\FINA£\main.asm</FILE><LINE>293</LINE></L1>
+ </LABELS>
+</ASSEMBLER_INFO>

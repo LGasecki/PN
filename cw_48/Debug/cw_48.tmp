@@ -1,0 +1,46 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.57</VERSION>
+ <DEVICE>"ATtiny2313A"</DEVICE>
+ <WORKING_DIR>C:\Users\gasec\Desktop\PN\cw_48\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\tn2313Adef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\gasec\Desktop\PN\cw_48\Debug/cw_48.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>cw_48.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>cw_48.map</FILE>
+  <FILE>cw_48.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <_main><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>80</LINE></_main>
+  <_timer_isr><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>73</LINE></_timer_isr>
+  <_PB0_isr><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>55</LINE></_PB0_isr>
+  <ENDINT0><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>64</LINE></ENDINT0>
+  <NumberToDigits><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>206</LINE></NumberToDigits>
+  <Int_0_Init><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>96</LINE></Int_0_Init>
+  <TimerInit><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>106</LINE></TimerInit>
+  <MainLoop><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>121</LINE></MainLoop>
+  <DigitToPin><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>173</LINE></DigitToPin>
+  <DigitTo7segCode><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>161</LINE></DigitTo7segCode>
+  <DelayInMs><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>139</LINE></DelayInMs>
+  <ContinueLoop><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>133</LINE></ContinueLoop>
+  <ResetCounter><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>135</LINE></ResetCounter>
+  <InsideDelayInMs><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>143</LINE></InsideDelayInMs>
+  <DelayOneMs><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>150</LINE></DelayOneMs>
+  <InsideDelayOneMs><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>154</LINE></InsideDelayOneMs>
+  <Table><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>171</LINE></Table>
+  <Table1><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>183</LINE></Table1>
+  <Divide><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>185</LINE></Divide>
+  <Compare><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>190</LINE></Compare>
+  <end_div><FILE>C:\Users\gasec\Desktop\PN\cw_48\main.asm</FILE><LINE>198</LINE></end_div>
+ </LABELS>
+</ASSEMBLER_INFO>

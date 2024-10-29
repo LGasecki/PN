@@ -1,0 +1,40 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.57</VERSION>
+ <DEVICE>"ATtiny2313"</DEVICE>
+ <WORKING_DIR>C:\Users\gasec\Desktop\PN\cw_44\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\gasec\Desktop\PN\cw_44\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\tn2313def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\gasec\Desktop\PN\cw_44\Debug/cw_44.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>cw_44.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>cw_44.map</FILE>
+  <FILE>cw_44.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <MainLoop><FILE>C:\Users\gasec\Desktop\PN\cw_44\main.asm</FILE><LINE>64</LINE></MainLoop>
+  <DigitToPin><FILE>C:\Users\gasec\Desktop\PN\cw_44\main.asm</FILE><LINE>123</LINE></DigitToPin>
+  <DigitTo7segCode><FILE>C:\Users\gasec\Desktop\PN\cw_44\main.asm</FILE><LINE>111</LINE></DigitTo7segCode>
+  <DelayInMs><FILE>C:\Users\gasec\Desktop\PN\cw_44\main.asm</FILE><LINE>89</LINE></DelayInMs>
+  <Licznik><FILE>C:\Users\gasec\Desktop\PN\cw_44\main.asm</FILE><LINE>75</LINE></Licznik>
+  <Overflow><FILE>C:\Users\gasec\Desktop\PN\cw_44\main.asm</FILE><LINE>72</LINE></Overflow>
+  <NumberToDigits><FILE>C:\Users\gasec\Desktop\PN\cw_44\main.asm</FILE><LINE>156</LINE></NumberToDigits>
+  <InsideDelayInMs><FILE>C:\Users\gasec\Desktop\PN\cw_44\main.asm</FILE><LINE>93</LINE></InsideDelayInMs>
+  <DelayOneMs><FILE>C:\Users\gasec\Desktop\PN\cw_44\main.asm</FILE><LINE>100</LINE></DelayOneMs>
+  <InsideDelayOneMs><FILE>C:\Users\gasec\Desktop\PN\cw_44\main.asm</FILE><LINE>104</LINE></InsideDelayOneMs>
+  <Table><FILE>C:\Users\gasec\Desktop\PN\cw_44\main.asm</FILE><LINE>121</LINE></Table>
+  <Table1><FILE>C:\Users\gasec\Desktop\PN\cw_44\main.asm</FILE><LINE>133</LINE></Table1>
+  <Divide><FILE>C:\Users\gasec\Desktop\PN\cw_44\main.asm</FILE><LINE>135</LINE></Divide>
+  <Compare><FILE>C:\Users\gasec\Desktop\PN\cw_44\main.asm</FILE><LINE>140</LINE></Compare>
+  <end_div><FILE>C:\Users\gasec\Desktop\PN\cw_44\main.asm</FILE><LINE>148</LINE></end_div>
+ </LABELS>
+</ASSEMBLER_INFO>

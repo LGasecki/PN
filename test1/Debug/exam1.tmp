@@ -1,0 +1,41 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.57</VERSION>
+ <DEVICE>"ATtiny2313A"</DEVICE>
+ <WORKING_DIR>C:\Users\gasec\Desktop\PN\test1\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\gasec\Desktop\PN\test1\test.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\tn2313Adef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\gasec\Desktop\PN\test1\Debug/exam1.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>exam1.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>exam1.map</FILE>
+  <FILE>exam1.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <_main><FILE>C:\Users\gasec\Desktop\PN\test1\test.asm</FILE><LINE>89</LINE></_main>
+  <_Timer_ISR><FILE>C:\Users\gasec\Desktop\PN\test1\test.asm</FILE><LINE>63</LINE></_Timer_ISR>
+  <_ExtInt_ISR><FILE>C:\Users\gasec\Desktop\PN\test1\test.asm</FILE><LINE>45</LINE></_ExtInt_ISR>
+  <Increment><FILE>C:\Users\gasec\Desktop\PN\test1\test.asm</FILE><LINE>50</LINE></Increment>
+  <NoOverflow><FILE>C:\Users\gasec\Desktop\PN\test1\test.asm</FILE><LINE>55</LINE></NoOverflow>
+  <_NumberToDigits><FILE>C:\Users\gasec\Desktop\PN\test1\test.asm</FILE><LINE>171</LINE></_NumberToDigits>
+  <MainLoop><FILE>C:\Users\gasec\Desktop\PN\test1\test.asm</FILE><LINE>132</LINE></MainLoop>
+  <DigitTo7segCode><FILE>C:\Users\gasec\Desktop\PN\test1\test.asm</FILE><LINE>247</LINE></DigitTo7segCode>
+  <DelayInMs><FILE>C:\Users\gasec\Desktop\PN\test1\test.asm</FILE><LINE>265</LINE></DelayInMs>
+  <_Divide><FILE>C:\Users\gasec\Desktop\PN\test1\test.asm</FILE><LINE>219</LINE></_Divide>
+  <Compare><FILE>C:\Users\gasec\Desktop\PN\test1\test.asm</FILE><LINE>224</LINE></Compare>
+  <end_div><FILE>C:\Users\gasec\Desktop\PN\test1\test.asm</FILE><LINE>232</LINE></end_div>
+  <Table><FILE>C:\Users\gasec\Desktop\PN\test1\test.asm</FILE><LINE>245</LINE></Table>
+  <L2><FILE>C:\Users\gasec\Desktop\PN\test1\test.asm</FILE><LINE>270</LINE></L2>
+  <OneMsLoop><FILE>C:\Users\gasec\Desktop\PN\test1\test.asm</FILE><LINE>283</LINE></OneMsLoop>
+  <L1><FILE>C:\Users\gasec\Desktop\PN\test1\test.asm</FILE><LINE>289</LINE></L1>
+ </LABELS>
+</ASSEMBLER_INFO>

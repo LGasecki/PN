@@ -1,0 +1,41 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.57</VERSION>
+ <DEVICE>"ATtiny2313"</DEVICE>
+ <WORKING_DIR>C:\Users\gasec\Desktop\PN\cw_45\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\gasec\Desktop\PN\cw_45\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\tn2313def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\gasec\Desktop\PN\cw_45\Debug/cw_45.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>cw_45.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>cw_45.map</FILE>
+  <FILE>cw_45.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <MainLoop><FILE>C:\Users\gasec\Desktop\PN\cw_45\main.asm</FILE><LINE>77</LINE></MainLoop>
+  <_timer_isr><FILE>C:\Users\gasec\Desktop\PN\cw_45\main.asm</FILE><LINE>7</LINE></_timer_isr>
+  <DigitToPin><FILE>C:\Users\gasec\Desktop\PN\cw_45\main.asm</FILE><LINE>136</LINE></DigitToPin>
+  <DigitTo7segCode><FILE>C:\Users\gasec\Desktop\PN\cw_45\main.asm</FILE><LINE>124</LINE></DigitTo7segCode>
+  <DelayInMs><FILE>C:\Users\gasec\Desktop\PN\cw_45\main.asm</FILE><LINE>102</LINE></DelayInMs>
+  <Licznik><FILE>C:\Users\gasec\Desktop\PN\cw_45\main.asm</FILE><LINE>88</LINE></Licznik>
+  <Overflow><FILE>C:\Users\gasec\Desktop\PN\cw_45\main.asm</FILE><LINE>85</LINE></Overflow>
+  <NumberToDigits><FILE>C:\Users\gasec\Desktop\PN\cw_45\main.asm</FILE><LINE>169</LINE></NumberToDigits>
+  <InsideDelayInMs><FILE>C:\Users\gasec\Desktop\PN\cw_45\main.asm</FILE><LINE>106</LINE></InsideDelayInMs>
+  <DelayOneMs><FILE>C:\Users\gasec\Desktop\PN\cw_45\main.asm</FILE><LINE>113</LINE></DelayOneMs>
+  <InsideDelayOneMs><FILE>C:\Users\gasec\Desktop\PN\cw_45\main.asm</FILE><LINE>117</LINE></InsideDelayOneMs>
+  <Table><FILE>C:\Users\gasec\Desktop\PN\cw_45\main.asm</FILE><LINE>134</LINE></Table>
+  <Table1><FILE>C:\Users\gasec\Desktop\PN\cw_45\main.asm</FILE><LINE>146</LINE></Table1>
+  <Divide><FILE>C:\Users\gasec\Desktop\PN\cw_45\main.asm</FILE><LINE>148</LINE></Divide>
+  <Compare><FILE>C:\Users\gasec\Desktop\PN\cw_45\main.asm</FILE><LINE>153</LINE></Compare>
+  <end_div><FILE>C:\Users\gasec\Desktop\PN\cw_45\main.asm</FILE><LINE>161</LINE></end_div>
+ </LABELS>
+</ASSEMBLER_INFO>
